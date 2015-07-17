@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"math/rand"
 
 	co "./src/gen-go/CoffeeService"
 	"git.apache.org/thrift.git/lib/go/thrift"
@@ -16,8 +17,8 @@ func (coh CoffeeOrderHandler) Ping() error {
 }
 
 func (coh CoffeeOrderHandler) OrderCoffee(coffee *co.Coffee) (r int32, err error) {
-	//	log.Printf("%#v", coffee)
-	return 0, nil
+	log.Printf("%#v", coffee)
+	return rand.Int31(), nil
 }
 
 func NewCoffeeOrderHandler() CoffeeOrderHandler {

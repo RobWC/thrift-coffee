@@ -26,6 +26,11 @@ func main() {
 
 	coffee := CoffeeService.NewCoffee()
 	coffee.Name = "foo"
+	coffee.Creamers = []*CoffeeService.Creamer{&CoffeeService.Creamer{Name: "Fruit"}}
+	coffee.Sweetners = []*CoffeeService.Sweetner{&CoffeeService.Sweetner{Name: "Yum", Amount: 3}}
+	coffee.Temperature = 140
+	coffee.Iced = false
+	coffee.Size = &CoffeeService.Size{Name: "Venti", Ounces: 20}
 
 	log.Println(coffee)
 
